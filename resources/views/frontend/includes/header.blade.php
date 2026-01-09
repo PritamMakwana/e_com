@@ -227,7 +227,7 @@
                                     <i class="fa-light fa-user"></i>
                                     <span>Account</span>
                                 </a> --}}
-                                <a href="wishlist.html" class="btn-border-only wishlist">
+                                <a href="{{ route('wishlist') }}" class="btn-border-only wishlist">
                                     <i class="fa-regular fa-heart"></i>
                                     <span class="text">Wishlist</span>
                                     {{-- <span class="number">2</span> --}}
@@ -322,7 +322,7 @@
                                             </div>
                                         </div>
                                     </div> --}}
-                                    {{-- <a href="cart.html" class="over_link"></a> --}}
+                                    <a href="{{ route('cart') }}" class="over_link"></a>
                                 </div>
                             </div>
                         </div>

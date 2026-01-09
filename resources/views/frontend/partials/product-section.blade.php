@@ -91,8 +91,17 @@
 
                                                 <div class="cart-counter-action">
                                                     @if ($product->stock_status === 'in_stock')
-                                                        <a href="#"
+                                                        {{-- <a href="#"
                                                             class="rts-btn btn-primary radious-sm with-icon">
+                                                            <div class="btn-text">Add</div>
+                                                            <div class="arrow-icon">
+                                                                <i class="fa-regular fa-cart-shopping"></i>
+                                                            </div>
+                                                        </a> --}}
+
+                                                        <a href="javascript:void(0)"
+                                                            class="rts-btn btn-primary radious-sm with-icon add-to-cart"
+                                                            data-id="{{ $product->id }}">
                                                             <div class="btn-text">Add</div>
                                                             <div class="arrow-icon">
                                                                 <i class="fa-regular fa-cart-shopping"></i>
@@ -103,10 +112,18 @@
                                                     @endif
 
 
-                                                    {{-- Wishlist --}}
+                                                    {{-- Wishlist
                                                     <a href="#"
                                                         class="rts-btn btn-secondary radious-sm with-icon wishlist-btn"
                                                         data-product-id="{{ $product->id }}" title="Add to Wishlist">
+                                                        <div class="btn-text">
+                                                            <i class="fa-regular fa-heart"></i>
+                                                        </div>
+                                                    </a> --}}
+
+                                                    <a href="javascript:void(0)"
+                                                        class="rts-btn btn-secondary radious-sm with-icon add-to-wishlist"
+                                                        data-id="{{ $product->id }}">
                                                         <div class="btn-text">
                                                             <i class="fa-regular fa-heart"></i>
                                                         </div>

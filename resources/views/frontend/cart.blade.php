@@ -49,175 +49,68 @@
 
                             </div>
                         </div>
-                        <div class="single-cart-area-list main  item-parent">
-                            <div class="product-main-cart">
-                                <div class="close section-activation">
-                                    <img src="assets/images/shop/01.png" alt="shop">
+                        @php
+                            $cart = session('cart', []);
+                            $total = 0;
+                        @endphp
+
+                        @foreach ($cart as $item)
+                            @php
+                                $subtotal = $item['price'] * $item['quantity'];
+                                $total += $subtotal;
+                            @endphp
+
+                            <div class="single-cart-area-list main" id="cart-{{ $item['id'] }}">
+                                <div class="product-main-cart">
+                                    <!-- REMOVE -->
+                                    <div class="close remove-cart" data-id="{{ $item['id'] }}">
+                                        <i class="fa-regular fa-xmark"></i>
+                                    </div>
+
+                                    <div class="thumbnail">
+                                        <img src="{{ asset('storage/' . $item['image']) }}">
+                                    </div>
+
+                                    <div class="information">
+                                        <h6>{{ $item['name'] }}</h6>
+                                    </div>
                                 </div>
-                                <div class="thumbnail">
-                                    <img src="assets/images/shop/02.png" alt="shop">
+
+                                <div class="price">₹{{ $item['price'] }}</div>
+
+                                <div class="quantity">
+                                    <div class="quantity-edit">
+                                        <button class="qty-btn minus" data-id="{{ $item['id'] }}"><i
+                                                class="fa-regular fa-chevron-down"></i></button>
+
+                                        <input type="text" class="qty" value="{{ $item['quantity'] }}"
+                                            data-id="{{ $item['id'] }}" readonly>
+
+                                        <button class="qty-btn plus" data-id="{{ $item['id'] }}"><i
+                                                class="fa-regular fa-chevron-up"></i></button>
+                                    </div>
                                 </div>
-                                <div class="information">
-                                    <h6 class="title">SunChips Minis, Garden Salsa Flavored Canister, Multigrain Chips</h6>
-                                    <span>SKU:BG-1001</span>
+
+
+                                <div class="subtotal subtotal-{{ $item['id'] }}">
+                                    ₹{{ $subtotal }}
                                 </div>
                             </div>
-                            <div class="price">
-                                <p>$550.00</p>
-                            </div>
-                            <div class="quantity">
-                                <div class="quantity-edit">
-                                    <input type="text" class="input" value="1">
-                                    <div class="button-wrapper-action">
-                                        <button class="button"><i class="fa-regular fa-chevron-down"></i></button>
-                                        <button class="button plus">+<i class="fa-regular fa-chevron-up"></i></button>
+                        @endforeach
+                        @if (count($cart))
+                            <div class="row mt-4">
+                                <div class="col-lg-4 offset-lg-8">
+                                    <div class="cart-total-area">
+                                        <h5>Cart Total</h5>
+                                        <h3>₹ <span id="cart-total">{{ $total }}</span></h3>
+
+                                        <a href="#" class="rts-btn btn-primary w-100 mt-3">
+                                            Proceed to Checkout
+                                        </a>
                                     </div>
                                 </div>
                             </div>
-                            <div class="subtotal">
-                                <p>$550.00</p>
-                            </div>
-                            <div class="button-area">
-                                <a href="#" class="rts-btn btn-primary radious-sm with-icon">
-                                    <div class="btn-text">
-                                        Add To Cart
-                                    </div>
-                                    <div class="arrow-icon">
-                                        <i class="fa-regular fa-cart-shopping"></i>
-                                    </div>
-                                    <div class="arrow-icon">
-                                        <i class="fa-regular fa-cart-shopping"></i>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="single-cart-area-list main  item-parent">
-                            <div class="product-main-cart">
-                                <div class="close section-activation">
-                                    <img src="assets/images/shop/01.png" alt="shop">
-                                </div>
-                                <div class="thumbnail">
-                                    <img src="assets/images/shop/05.png" alt="shop">
-                                </div>
-                                <div class="information">
-                                    <h6 class="title">SunChips Minis, Garden Salsa Flavored Canister, Multigrain Chips</h6>
-                                    <span>SKU:BG-1001</span>
-                                </div>
-                            </div>
-                            <div class="price">
-                                <p>$550.00</p>
-                            </div>
-                            <div class="quantity">
-                                <div class="quantity-edit">
-                                    <input type="text" class="input" value="1">
-                                    <div class="button-wrapper-action">
-                                        <button class="button"><i class="fa-regular fa-chevron-down"></i></button>
-                                        <button class="button plus">+<i class="fa-regular fa-chevron-up"></i></button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="subtotal">
-                                <p>$550.00</p>
-                            </div>
-                            <div class="button-area">
-                                <a href="#" class="rts-btn btn-primary radious-sm with-icon">
-                                    <div class="btn-text">
-                                        Add To Cart
-                                    </div>
-                                    <div class="arrow-icon">
-                                        <i class="fa-regular fa-cart-shopping"></i>
-                                    </div>
-                                    <div class="arrow-icon">
-                                        <i class="fa-regular fa-cart-shopping"></i>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="single-cart-area-list main  item-parent">
-                            <div class="product-main-cart">
-                                <div class="close section-activation">
-                                    <img src="assets/images/shop/01.png" alt="shop">
-                                </div>
-                                <div class="thumbnail">
-                                    <img src="assets/images/shop/04.png" alt="shop">
-                                </div>
-                                <div class="information">
-                                    <h6 class="title">SunChips Minis, Garden Salsa Flavored Canister, Multigrain Chips</h6>
-                                    <span>SKU:BG-1001</span>
-                                </div>
-                            </div>
-                            <div class="price">
-                                <p>$550.00</p>
-                            </div>
-                            <div class="quantity">
-                                <div class="quantity-edit">
-                                    <input type="text" class="input" value="1">
-                                    <div class="button-wrapper-action">
-                                        <button class="button"><i class="fa-regular fa-chevron-down"></i></button>
-                                        <button class="button plus">+<i class="fa-regular fa-chevron-up"></i></button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="subtotal">
-                                <p>$550.00</p>
-                            </div>
-                            <div class="button-area">
-                                <a href="#" class="rts-btn btn-primary radious-sm with-icon">
-                                    <div class="btn-text">
-                                        Add To Cart
-                                    </div>
-                                    <div class="arrow-icon">
-                                        <i class="fa-regular fa-cart-shopping"></i>
-                                    </div>
-                                    <div class="arrow-icon">
-                                        <i class="fa-regular fa-cart-shopping"></i>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="single-cart-area-list main  item-parent">
-                            <div class="product-main-cart">
-                                <div class="close section-activation">
-                                    <img src="assets/images/shop/01.png" alt="shop">
-                                </div>
-                                <div class="thumbnail">
-                                    <img src="assets/images/shop/06.png" alt="shop">
-                                </div>
-                                <div class="information">
-                                    <h6 class="title">SunChips Minis, Garden Salsa Flavored Canister, Multigrain Chips
-                                    </h6>
-                                    <span>SKU:BG-1001</span>
-                                </div>
-                            </div>
-                            <div class="price">
-                                <p>$550.00</p>
-                            </div>
-                            <div class="quantity">
-                                <div class="quantity-edit">
-                                    <input type="text" class="input" value="1">
-                                    <div class="button-wrapper-action">
-                                        <button class="button"><i class="fa-regular fa-chevron-down"></i></button>
-                                        <button class="button plus">+<i class="fa-regular fa-chevron-up"></i></button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="subtotal">
-                                <p>$550.00</p>
-                            </div>
-                            <div class="button-area">
-                                <a href="#" class="rts-btn btn-primary radious-sm with-icon">
-                                    <div class="btn-text">
-                                        Add To Cart
-                                    </div>
-                                    <div class="arrow-icon">
-                                        <i class="fa-regular fa-cart-shopping"></i>
-                                    </div>
-                                    <div class="arrow-icon">
-                                        <i class="fa-regular fa-cart-shopping"></i>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
+                        @endif
                     </div>
                 </div>
             </div>

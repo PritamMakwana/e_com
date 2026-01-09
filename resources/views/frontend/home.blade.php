@@ -1116,5 +1116,4 @@
     </div>
     <!-- progress area end -->
 
-
 @endsection
