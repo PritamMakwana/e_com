@@ -96,14 +96,19 @@
               </a>
             </li>
 
-            {{-- payment --}}
-            <li class="menu-item {{ Request::is('payment*') ? 'active' : '' }} ">
-              <a href="{{ url('/payment') }}" class="menu-link">
-              <i class='menu-icon tf-icons bx bx-wallet-alt'></i>
-                <div>Payment</div>
-              </a>
-           </li>
+            <li class="menu-item {{ Request::is('admin/banners*') ? 'active' : '' }}">
+            <a href="{{ route('admin.banners.index') }}" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-image"></i>
+                <div>Banner</div>
+            </a>
+            </li>
 
+            <li class="menu-item {{ request()->routeIs('admin.sliders.*') ? 'active' : '' }}">
+             <a href="{{ route('admin.sliders.index') }}" class="menu-link">
+             <i class="menu-icon bx bx-slider"></i>
+                <div>Sliders</div>
+            </a>
+        </li>
 
            <li class="menu-item {{ Request::is('companies*') ? 'active' : '' }} ">
             <a href="{{ url('/companies') }}" class="menu-link">

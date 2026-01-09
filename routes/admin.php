@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\AuthController;
+use App\Http\Controllers\Admin\BannerController;
+use App\Http\Controllers\Admin\SliderController;
 use App\Http\Controllers\Admin\DashboardController;
 
 Route::prefix('admin')->name('admin.')->group(function () {
@@ -14,5 +16,10 @@ Route::prefix('admin')->name('admin.')->group(function () {
     Route::middleware('admin.auth')->group(function () {
         Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
         Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+
+        // Banner Routes
+        Route::resource('banners', BannerController::class);
+        // Slider Routes
+        Route::resource('sliders', SliderController::class);
     });
 });
