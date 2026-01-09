@@ -88,25 +88,35 @@
 
           <div class="menu-inner-shadow"></div>
           <ul class="menu-inner py-1">
-            <!-- Dashboard -->
-            <li class="menu-item {{ Request::is('dashboard') ? 'active' : '' }} {{ Request::is('/') ? 'active' : '' }}">
-              <a href="{{ route('admin.dashboard') }}" class="menu-link ">
+            {{-- Dashboard --}}
+        <li class="menu-item {{ request()->routeIs('admin.dashboard') ? 'active' : '' }}">
+            <a href="{{ route('admin.dashboard') }}" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-home-circle"></i>
-                <div data-i18n="Analytics">Dashboard </div>
-              </a>
-            </li>
+                <div>Dashboard</div>
+            </a>
+        </li>
 
-            <li class="menu-item {{ Request::is('admin/banners*') ? 'active' : '' }}">
+           {{-- Banner --}}
+        <li class="menu-item {{ request()->routeIs('admin.banners.*') ? 'active' : '' }}">
             <a href="{{ route('admin.banners.index') }}" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-image"></i>
-                <div>Banner</div>
+                <div>Banners</div>
             </a>
-            </li>
+        </li>
 
-            <li class="menu-item {{ request()->routeIs('admin.sliders.*') ? 'active' : '' }}">
-             <a href="{{ route('admin.sliders.index') }}" class="menu-link">
-             <i class="menu-icon bx bx-slider"></i>
+        {{-- Slider --}}
+        <li class="menu-item {{ request()->routeIs('admin.sliders.*') ? 'active' : '' }}">
+            <a href="{{ route('admin.sliders.index') }}" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-slideshow"></i>
                 <div>Sliders</div>
+            </a>
+        </li>
+
+        {{-- Testimonials --}}
+        <li class="menu-item {{ request()->routeIs('admin.testimonials.*') ? 'active' : '' }}">
+            <a href="{{ route('admin.testimonials.index') }}" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-message-square-dots"></i>
+                <div>Testimonials</div>
             </a>
         </li>
 

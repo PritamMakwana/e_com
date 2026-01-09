@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\AuthController;
 use App\Http\Controllers\Admin\BannerController;
 use App\Http\Controllers\Admin\SliderController;
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\TestimonialController;
 
 Route::prefix('admin')->name('admin.')->group(function () {
 
@@ -21,5 +22,7 @@ Route::prefix('admin')->name('admin.')->group(function () {
         Route::resource('banners', BannerController::class);
         // Slider Routes
         Route::resource('sliders', SliderController::class);
+        // Testimonial Routes
+        Route::resource('testimonials', TestimonialController::class);
     });
 });
