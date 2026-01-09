@@ -128,19 +128,21 @@
             </a>
         </li>
 
-           <li class="menu-item {{ Request::is('companies*') ? 'active' : '' }} ">
-            <a href="{{ url('/companies') }}" class="menu-link">
-                <i class="menu-icon tf-icons bx bx-collection"></i>
-              <div>Companies</div>
+        {{-- Category --}}
+        <li class="menu-item {{ Request::is('admin/categories*') ? 'active open' : '' }}">
+            <a href="{{ route('admin.categories.index') }}" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-category"></i>
+                <div>Product Categories</div>
             </a>
-         </li>
+        </li>
 
-         <li class="menu-item {{ Request::is('employees*') ? 'active' : '' }} ">
-            <a href="{{ url('/employees') }}" class="menu-link">
-                <i class='menu-icon tf-icons bx bxs-user-detail'></i>
-              <div>Employees</div>
+        {{-- Products --}}
+        <li class="menu-item {{ Request::is('admin/products*') ? 'active open' : '' }}">
+            <a href="{{ route('admin.products.index') }}" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-box"></i>
+             <div>Products</div>
             </a>
-         </li>
+        </li>
 
           </ul>
         </aside>

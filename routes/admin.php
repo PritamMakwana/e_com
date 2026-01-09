@@ -5,6 +5,8 @@ use App\Http\Controllers\Admin\AuthController;
 use App\Http\Controllers\Admin\BlogController;
 use App\Http\Controllers\Admin\BannerController;
 use App\Http\Controllers\Admin\SliderController;
+use App\Http\Controllers\Admin\ProductController;
+use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\TestimonialController;
 
@@ -27,5 +29,10 @@ Route::prefix('admin')->name('admin.')->group(function () {
         Route::resource('testimonials', TestimonialController::class);
         // Blog Routes
         Route::resource('blogs', BlogController::class);
+        // Category Routes
+        Route::resource('categories', CategoryController::class);
+        // Product Routes
+        Route::resource('products', ProductController::class);
+
     });
 });
