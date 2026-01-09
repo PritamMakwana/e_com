@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\AuthController;
+use App\Http\Controllers\Admin\BlogController;
 use App\Http\Controllers\Admin\BannerController;
 use App\Http\Controllers\Admin\SliderController;
 use App\Http\Controllers\Admin\DashboardController;
@@ -24,5 +25,7 @@ Route::prefix('admin')->name('admin.')->group(function () {
         Route::resource('sliders', SliderController::class);
         // Testimonial Routes
         Route::resource('testimonials', TestimonialController::class);
+        // Blog Routes
+        Route::resource('blogs', BlogController::class);
     });
 });

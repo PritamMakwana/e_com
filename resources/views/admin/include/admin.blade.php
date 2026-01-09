@@ -120,6 +120,14 @@
             </a>
         </li>
 
+        {{-- Blogs --}}
+        <li class="menu-item {{ request()->routeIs('admin.blogs.*') ? 'active' : '' }}">
+            <a href="{{ route('admin.blogs.index') }}" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-book-content"></i>
+                <div>Blogs</div>
+            </a>
+        </li>
+
            <li class="menu-item {{ Request::is('companies*') ? 'active' : '' }} ">
             <a href="{{ url('/companies') }}" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-collection"></i>
