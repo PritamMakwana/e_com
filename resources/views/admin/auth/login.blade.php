@@ -44,7 +44,8 @@
       <div class="card">
         <div class="card-body">
           <div class="app-brand justify-content-center">
-              <img src="https://quantumitinnovation.com/assets/images/logo/logo.png"  alt="logo" height="60"/>
+              {{-- <img src=""  alt="logo" height="60"/> --}}
+              <h1>Admin Panel</h1>
           </div>
           <!-- /Logo -->
           <form id="formAuthentication" class="mb-3" action="{{ route('admin.login') }}" method="POST">
